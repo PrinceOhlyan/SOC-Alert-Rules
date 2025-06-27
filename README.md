@@ -74,4 +74,4 @@ Author
 
 Prince Ohlyan | Certified Security Analyst (CSA-EC Council)
 
-LinkedIn: Prince Ohlyan
+LinkedIn: [Prince Ohlyan](https://www.linkedin.com/in/prince-ohlyan/)
