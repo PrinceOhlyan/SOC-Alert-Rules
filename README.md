@@ -22,3 +22,12 @@ These queries are designed to detect suspicious activities across Windows enviro
 index=wineventlog EventCode=4625
 | stats count by Account_Name, Source_Network_Address
 | where count > 5
+```
+
+### 🔸 Suspicious PowerShell Execution
+```splunk
+index=wineventlog EventCode=4104
+| search Message="EncodedCommand"
+| stats count by User, ComputerName
+```
+
