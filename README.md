@@ -30,4 +30,16 @@ index=wineventlog EventCode=4104
 | search Message="EncodedCommand"
 | stats count by User, ComputerName
 ```
+### 🔸 Failed RDP Login Attempts
+```splunk
+ndex=wineventlog EventCode=4625 Logon_Type=10
+| stats count by Account_Name, Source_Network_Address
+| where count > 3
+```
+### 🔸 Potential Malware Beaconing (DNS Pattern)
+```splunk
+index=dns_logs
+| stats count by query
+| where like(query, "%.%.%.%") OR like(query, "%.%.%.%.%")
+```
 
