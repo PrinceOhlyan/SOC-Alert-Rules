@@ -23,8 +23,7 @@ index=wineventlog EventCode=4625
 | stats count by Account_Name, Source_Network_Address
 | where count > 5
 
-
-⸻
+---
 
 🔸 Suspicious PowerShell Execution
 
@@ -33,7 +32,7 @@ index=wineventlog EventCode=4104
 | stats count by User, ComputerName
 
 
-⸻
+---
 
 🔸 Failed RDP Login Attempts
 
@@ -42,7 +41,7 @@ index=wineventlog EventCode=4625 Logon_Type=10
 | where count > 3
 
 
-⸻
+---
 
 🔸 Potential Malware Beaconing (DNS Pattern)
 
@@ -51,7 +50,7 @@ index=dns_logs
 | where like(query, "%.%.%.%") OR like(query, "%.%.%.%.%")
 
 
-⸻
+---
 
 MITRE ATT&CK Mappings
 
@@ -62,14 +61,14 @@ RDP Brute Force	T1110
 Malware Beaconing	T1071.004
 
 
-⸻
+---
 
 Future Work
 	•	Add more Splunk rules
 	•	Write Sigma rules for ELK Stack
 	•	Automate IOC extraction
 
-⸻
+---
 
 Author
 
