@@ -25,7 +25,7 @@ index=wineventlog EventCode=4625
 
 ---
 
-##🔸 Suspicious PowerShell Execution
+🔸 Suspicious PowerShell Execution
 
 index=wineventlog EventCode=4104
 | search Message="*EncodedCommand*"
@@ -34,7 +34,7 @@ index=wineventlog EventCode=4104
 
 ---
 
-##🔸 Failed RDP Login Attempts
+🔸 Failed RDP Login Attempts
 
 index=wineventlog EventCode=4625 Logon_Type=10
 | stats count by Account_Name, Source_Network_Address
@@ -43,7 +43,7 @@ index=wineventlog EventCode=4625 Logon_Type=10
 
 ---
 
-##🔸 Potential Malware Beaconing (DNS Pattern)
+🔸 Potential Malware Beaconing (DNS Pattern)
 
 index=dns_logs
 | stats count by query
